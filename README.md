@@ -54,12 +54,3 @@
  * AWS and other services like it take care of: physical security of servers, infrastructure, equipment, keeping customers separate
  * Customer is responsible for network and application security
  * Keep in mind:
-  1. Protect data transfer using SSL certificates
-  2. Protect the storage of data by encrypting the data 
-  3. Protect your AWS credentials, should use HTTPS
-   * All API requests should be sent over HTTPS
-   * Rather than having your AWS secret access key be part of your app code, instead have it be passed in as an argument during the launch of the app and encrypted before sending it
-   * Rotate your access keys often
-   * Manage user access control using IAM 
-
- 
