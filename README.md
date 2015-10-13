@@ -1,7 +1,6 @@
 # Amazon Web Services (AWS) Tutorial Notes
 
 ## Chapter 1: Cloud Concepts
-
 ### Cloud Services
 * There are 3 types of Services:
  1. Infrastructure as a Service (IaaS)
@@ -35,3 +34,32 @@
 * Constraints - no longer an issue because the cloud is made up of building blocks that allow you to scale quickly
 * Role of the Admin - need to be aware of the flexibility and on-demand model provided by the cloud
 
+## Chapter 2: Cloud Best Practices
+* Design your system for failure
+ * Minimize dependencies of components
+ * Avoid single points of failure (i.e. a single database server without a backup)
+* Implementing Elasticity - ability to scale cloud resources
+ * Schedule-based proactive scaling
+ * Event-based proactive scaling
+ * Metric-based automatic scaling
+ * Automate deployment process
+ * Streamline the build-and-configuration process
+ * Bootstrapping startup processes
+* Decouple Components
+ * Design principle that involves minimizing the dependencies between components
+  * If a component fails, others continue to work
+  * Example: using a load balancer to distribute demand a web server has of an app server
+* Security
+ * Customer of a cloud service like AWS is still responsible for a lot of the security 
+ * AWS and other services like it take care of: physical security of servers, infrastructure, equipment, keeping customers separate
+ * Customer is responsible for network and application security
+ * Keep in mind:
+  * Protect data transfer using SSL certificates
+  * Protect the storage of data by encrypting the data 
+  * Protect your AWS credentials, should use HTTPS
+   * All API requests should be sent over HTTPS
+   * Rather than having your AWS secret access key be part of your app code, instead have it be passed in as an argument during the launch of the app and encrypted before sending it
+   * Rotate your access keys often
+   * Manage user access control using IAM 
+ ## Chapter 3: Designing for Failure
+ 
