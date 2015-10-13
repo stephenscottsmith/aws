@@ -22,4 +22,16 @@
  * Proactive scaling for anticipation of demand
  * Efficient development and improved testability - production environments can easily be cloned and tested
  * Disaster recovery - can deploy in various geographical locations
+* Scalable architectures
+ * Scaling Out (horizontal scaling) - adding capacity to a system by giving it more components or nodes
+  * Example: adding more webservers to the systems to handle traffic
+ * Scaling In (also horizontal scaling) - removing capacity from a system
+  * Reducing the number of webservers
+ * Scaling Up (vertical scaling) - adding resources to a single component or node in a system to handle a greater load
+  * Example: increasing the number of CPUs or memory of a server
+ * Scaling Down (also vertical scaling) - reducing the resources of a single component
+ * ANY APPLICATION SHOULD BE DESIGNED TO TAKE ADVANTAGE OF ITS SCALABILITY
+* Elasticity - the power to scale computing resources up and down easily 
+* Constraints - no longer an issue because the cloud is made up of building blocks that allow you to scale quickly
+* Role of the Admin - need to be aware of the flexibility and on-demand model provided by the cloud
 
