@@ -1,8 +1,7 @@
 # Amazon Web Services (AWS) Tutorial Notes
 
 ## Chapter 1: Cloud Concepts
-### Cloud Services
-* There are 3 types of Services:
+* 3 types of Cloud Services:
  1. Infrastructure as a Service (IaaS)
    * Windows Azure, Rackspace Cloud
  2. Platform as a Service (PaaS)
@@ -55,3 +54,9 @@
  * Customer is responsible for network and application security
  * Keep in mind:
    * Protect data transfer using SSL certificates
+   * Protect the storage of data via encryption
+   * Protect your AWS credentials:
+     * All API requests should be sent over HTTPS
+     * Rather than having your AWS secret access key be part of your app code, instead have it be passed in as an argument during the launch of the app and encrypted before sending it
+     * Rotate your access keys often
+     * Manage user access control using IAM
