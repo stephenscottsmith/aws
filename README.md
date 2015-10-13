@@ -71,4 +71,9 @@
   * Availability Zones - distinct locations designed to be isolated
 * Amazon Machine Image (AMI)
   * AMI - is a basic unit of deployment and is a packaged environment and settings
+  * Could have ones that correspond to Web Servers, App Servers, etc.
+  * Made up of:
+    * Template for root volume
+    * Launch Permissions
+    * Block device mapping
 
