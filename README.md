@@ -62,3 +62,13 @@
       * Manage user access control using IAM
 
 ## Chapter 3: Designing For Failure
+* EC2 is the service that provides users with virtual servers and elastic IP's
+* Virtual Servers and Elastic IP's
+  * Elastic IP allows you to map any IP address you own to any instance you own
+    * Example: DNS -> IP -> Failed Server can be remapped DNS -> IP -> Working Server
+* Regions and Availability Zones
+  * EC2 instances can be launched in 1 or more geographical regions
+  * Availability Zones - distinct locations designed to be isolated
+* Amazon Machine Image (AMI)
+  * AMI - is a basic unit of deployment and is a packaged environment and settings
+
