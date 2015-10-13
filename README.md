@@ -45,9 +45,9 @@
  * Streamline the build-and-configuration process
  * Bootstrapping startup processes
 * Decouple Components
- * Design principle that involves minimizing the dependencies between components
-  * If a component fails, others continue to work
-  * Example: using a load balancer to distribute demand a web server has of an app server
+  * Design principle that involves minimizing the dependencies between components
+    * If a component fails, others continue to work
+    * Example: using a load balancer to distribute demand a web server has of an app server
 * Security
  * Customer of a cloud service like AWS is still responsible for a lot of the security 
  * AWS and other services like it take care of: physical security of servers, infrastructure, equipment, keeping customers separate
