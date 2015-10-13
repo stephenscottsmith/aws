@@ -61,5 +61,5 @@
    - Rather than having your AWS secret access key be part of your app code, instead have it be passed in as an argument during the launch of the app and encrypted before sending it
    - Rotate your access keys often
    - Manage user access control using IAM 
- ## Chapter 3: Designing for Failure
+## Chapter 3: Designing for Failure
  
