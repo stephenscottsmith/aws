@@ -76,4 +76,45 @@
     * Template for root volume
     * Launch Permissions
     * Block device mapping
+* Elastic Load Balancing
+  * Balances traffic across EC2 instances and AZ's
+  * Achieves greater fault tolerance
+  * Scales request-handling capability automatically
+  * Supports HTTP, HTTPS, and TCP
+  * Set up and configure health checks
+  * Scales dynamically
+  * Single CNAME for DNS configuration
+  * Use ELB to easily distribute your system across multiple zones to make sure it stays up and running
+* Resource and Application Monitoring (Cloudwatch)
+  * Monitor resources immediately and automatically 
+* Elastic Block Storage (EBS)
+  * Design to retain data
+  * Elastic Block Storage (Persistent)
+  * Ephemeral Storage (Not Persistant)
+  * Created separately from instances, you attach them to one another
+  * 2 Types of EBS: Standard Volumes, Provisioned IOPS Volumes
+  * Attach multiple volumes to a single instance
+  * Specify I/O performance
+  * Format with a filesystem, use like any other block device
+  * Create point-in-time snapshots that can be used to instantiate new volumes
+  * Copy snapshots across regions
+  * Use Cloudwatch to view performance metrics
+* Relational Database Service (RDS)
+  * In case of failure, ensure a safe and quick recovering
+  * Set up, operate, and scale a relational database
+  * Easy to manage
+  * Easily achieve high availability and redundancy
+  * Create a database instance
+  * Specify Engine (MySQL, Postgres, etc.)
+  * Specify instance size
+  * Connect once created
+  * Monitor with Cloudwatch
+  * No SSH access
+  * No root access
+  * Amazon manages patches, backups, failover, etc.
+  * Consider using RDS to simplify database security, administration, backups, redundancy, failovers, scalability, and geographical distribution
+
+## Chapter 4: Implementing Elasticity: Automating Infrastructure
+
+
 
