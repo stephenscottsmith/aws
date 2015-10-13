@@ -54,4 +54,4 @@
  * AWS and other services like it take care of: physical security of servers, infrastructure, equipment, keeping customers separate
  * Customer is responsible for network and application security
  * Keep in mind:
-  * Protect data transfer using SSL certificates
+   * Protect data transfer using SSL certificates
