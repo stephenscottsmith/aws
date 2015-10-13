@@ -10,5 +10,8 @@
    * Google App Engine, Heroku
  3. Software as a Service (SaaS)
    * Google Apps, Basecamp, Mint
-
+* AWS does all 3
+* Business Benefits
+ * Minimal upfront infrastructure investment
+ * Just-in-time infrastructure
 
