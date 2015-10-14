@@ -257,5 +257,5 @@
     * Performs the work assigned by SWF tasks
     * Work is scheduled by the Decider
     * Can run from anywhere
-  * Decoupling Components Lesson #2: Consider using SWF to help with more complex workflows and keep your components independent from one another. 
+  * **Decoupling Components Lesson #2:** Consider using SWF to help with more complex workflows and keep your components independent from one another. 
 
