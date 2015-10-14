@@ -371,4 +371,15 @@
 
 ## Chapter 7: Theory into Practice: Setting up a Web Application Architecture
 * Overview of the Web Application Architecture
-  * 
+  * Public Internet -> US East Region -> ELB -> Availability Zone A or B 
+  * Availability Zone A
+    * Web Servers with Auto-Scaling Group
+  * Availability Zone B
+    * Web Servers with Auto-Scaling Group
+    * RDS
+* Signing up for AWS
+  * Account is free
+  * Recommend MFA (multi-factor authentication)
+* Creating a New IAM User
+  *
+*
