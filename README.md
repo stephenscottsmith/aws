@@ -381,5 +381,25 @@
   * Account is free
   * Recommend MFA (multi-factor authentication)
 * Creating a New IAM User
+  * Can create custom login url from IAM dashboard
+* Creating a Key Pair
+  * Being able to use your EC2 instance depends on having a key-pair
+  * Associated with EC2 service as well
+  * Recommended that you rotate these out every so often
+  * Recommended that there is a convention in naming the key-pairs
+    * Example: one can be for dev, product, git, etc.
+  * Will download pem file that needs to be chmod 0400 to the downloads folder
+* Configuring a Security Group
   *
-*
+* Creating an ELB
+* Launching an EC2 Instance (and configuring Apache and PHP with user data)
+* Connecting to the EC2 Instance via HTTP
+* Connecting to the EC2 Instance via SSH
+* Creating a MySQL RDS Database
+* Creating a Custom Server Image
+* Auto Scaling
+
+## Chapter 8: Integrating an Application with other AWS Services
+* Launching an Instance in an IAM Role
+* Install the SDK
+* Using the SDK
