@@ -266,4 +266,23 @@
     * Monitor systems using CloudWatch
     * Raise an alarm based on an event
     * Alarm High CPU -> Topic-DevOps Alerts -> E-Mail and SMS
-    * 
+  * Sends to all subscribers using the protocol defined
+  * Can configure different messages based on protocol so e-mail can be different from SMS
+  * JSON structure used when sending different messages for the same alert
+  * Push Rather Than Pull
+    * Posting to a topic causes a message to send immediately
+    * SNS lets us set up a push notification systems
+    * SQS requires applications to poll constantly (Pull approach)
+    * SNS keeps applications independent and decoupled
+  * **Decoupling Components Rule #3:** When applicable, use SNS to help with communication between different components, as well as for having those components work in parallel for efficient and scalable systems.
+* Scalable NoSQL Data Store (DynamoDB) 
+  * NoSQL, No-Relational, Schemaless
+  * Low latency
+  * High performance, High throughput
+  * Data stored on SSD
+  * Automatically replicated across multiple AZ's
+  * Helps keep your application stateless
+  * Example: User session management
+  * **Decoupling Components Rule #4:** Make your applications as stateless as possible, and when a session state is needed, store this state outside of your application using DynamoDB
+
+## Chapter 6: Keeping Things Secure
