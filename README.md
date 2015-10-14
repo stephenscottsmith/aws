@@ -241,7 +241,7 @@
     * Image is downsized
     * A watermark is added
     * User is notified
-  * Decoupling Components Lesson #1: Use SQS to facilitate the communication between your independent components to bind them together into a fail-safe, scalable, and performant application
+  * **Decoupling Components Lesson #1:** Use SQS to facilitate the communication between your independent components to bind them together into a fail-safe, scalable, and performant application
 * Simple Workflow Service (SWF)
   * Helps define, manage and coordinate tasks for a given workflow
   * Deliver boilerplate code
@@ -258,4 +258,12 @@
     * Work is scheduled by the Decider
     * Can run from anywhere
   * **Decoupling Components Lesson #2:** Consider using SWF to help with more complex workflows and keep your components independent from one another. 
-
+* Simple Notification Service (SNS)
+  * Notify people or applications from the cloud
+  * Create topics
+  * Publish subscribe protocol
+  * Example: Notify Operations team of an issue in production
+    * Monitor systems using CloudWatch
+    * Raise an alarm based on an event
+    * Alarm High CPU -> Topic-DevOps Alerts -> E-Mail and SMS
+    * 
