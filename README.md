@@ -115,6 +115,136 @@
   * Consider using RDS to simplify database security, administration, backups, redundancy, failovers, scalability, and geographical distribution
 
 ## Chapter 4: Implementing Elasticity: Automating Infrastructure
-
-
+* Bootstrapping
+  * Creating a self-sustaining startup process
+  * Process needed to get your app running on EC2
+  * Tell instances who they are and what their role is
+  * Provide needed resources
+  * Example Process:
+    * Mount needed drives
+    * Start needed services
+    * Update files or scripts
+    * Update software 
+    * Register with load balancer
+  * Tools
+    * Run custom scripts and tools
+    * Chef or Puppet
+    * Opsworks (Free application management service)
+    * Access to instance metadata
+    * Cloud-Init (Linux)
+    * EC2Config (Windows)
+    * Write the scripts and configuration necessary to bootstrap your instances
+* Autoscaling Groups
+  * You define your scale-out and scale-in parameters
+  * The service will scale accordingly
+  * Components:
+    * Launch Configuration: What to scale
+    * Auto-Scaling Group: Where to launch
+    * Scaling Policy: How to launch
+      * This is where YOU can define metrics to handle scaling
+  * Take advantage of the Auto-Scaling service to greatly simplify the process of automating your scaling.
+* Scalable Storage *Simple Storage Service and CloudFront)
+  * Simple Storage Service (S3)
+  * Glacier
+  * CloudFront
+  * Storage Options AWS Provides:
+    * Block Storage - EBS/Instance Storage
+    * Object Storage - S3, Glacier, CloudFront
+    * Storage Gateway (Sync Volumes) - Connect local environment with AWS infrastructure
+    * Relational Databases - RDS
+    * NoSQL Databases - DynamoDB
+    * In-Memory Cache - Elasticahe
+    * Content Caching
+  * S3
+    * Object Store
+    * Objects stored in 'buckets'
+    * Object retrieved by 'keys'
+    * Not a traditional filesystem
+    * Minimal metadata management
+    * No search
+    * Built to be incredibly durable
+    * High Availability
+    * RRS - Reduced Redundancy Storage (less costly)
+    * Unlimited Storage Capacity
+    * 5TB limit per object
+    * REST/SOAP API protocol access
+    * Eventual Consistency Model
+  * Glacier
+    * For archival data
+    * 3-5 hour retrieval time
+    * Highly durable
+    * Cost-effective
+    * Manage objects through S3
+  * CloudFront
+    * Define and configure origin server
+    * Create a new CloudFront distribution
+    * Use the configurated domain name in your application
+    * Pay only for what you use
+  * Take advantage of the object storage options to improve the scalability, availability, durability, and performance of storing and accessing your application assets
+* Elastic Beanstalk
+  * Paas (Platform as a Service)
+    * Capacity Planning
+    * Load Balancing
+    * Auto-Scaling
+    * Health Monitoring 
+  * Supports Java, .NET, PHP, Python, Node.js, Ruby
+  * Sends application and server logs to S3
+  * You retain control over the resources
+  * Example Workflow
+    * Create your application
+    * Create Elastic Beanstalk environment
+    * Install Git version control
+    * Commit and publish to Beanstalk via Git
+    * Access app at a custom URL
+  * Environment
+    * Single micro EC2 instance
+    * Built from Amazon Linux or Windows 2008 Server
+    * Runs an ELB to distribute traffic 
+    * Configures EC2 for Auto-Scaling
+    * Provides a URL
+    * You can configure High Availability
+    * No additional charge for Beanstalk
+  * Consider taking advantage of Elastic Beanstalk to deploy your applications in a fully managed container in the cloud.
+* CloudFormation and CloudFormer
+  * Provides an easy way to manage related resources
+  * Define an app stack as text template files
+  * Use version control to manage environment
+  * Quickly Rebuild the Stack
+    * Deploy to Development or QA
+    * Move Regions
+    * Share a stack with someone else
+    * Deploy via Application Management Console or the API
+  * JSON Notation
+  * CloudFormer
+    * Configure and launch required resources
+    * Create and launch a CloudFormer stack
+    * Use CloudFormer to create a template
+    * Shut down the CloudFormer stack
+    * Use the CloudFormation template as needed
+  * Use CloudFormation templates to manage and version-control your entire AWS application stack, and easily replicate your stack to new environments.
+## Chpater 5: Decoupling Your Components
+* Simple Queue Service (SQS)
+  * Decoupling Components
+    * Reduce tight dependencies
+    * Scale bigger and better
+    * If a component becomes unresponsive, others continue on
+  * SQL 
+    * Message queueing software in the cloud
+    * Reliable, highly scalable, distributed
+    * Pass messages between computers and app components
+    * Allows communication with independence
+  * Tightly Coupled System vs Loosely Coupled System
+    * Have controllers within the system implemented with queues for each of the controllers
+  * Watermarking App Example
+    * User uploads an image
+    * Image is downsized
+    * A watermark is added
+    * User is notified
+  * Decoupling Components Lesson #1: Use SQS to facilitate the communication between your independent components to bind them together into a fail-safe, scalable, and performant application
+* Simple Workflow Service (SWF)
+  * Helps define, manage and coordinate tasks for a given workflow
+  * Deliver boilerplate code
+  * Ecommererce Common Workflow
+    * Customer places order - validate order -> payment is successful -> ship order -> record completion -> end
+                              order verifiers-> CC verifiers          -> warehouse employees -> database records
 
