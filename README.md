@@ -286,3 +286,31 @@
   * **Decoupling Components Rule #4:** Make your applications as stateless as possible, and when a session state is needed, store this state outside of your application using DynamoDB
 
 ## Chapter 6: Keeping Things Secure
+* Shared Security Model
+  * Information security is paramount
+  * Protect information from compromise
+  * Think about and implement security at every layer
+  * Understand the AWS security model
+  * Responsibility is shared between consumer and provider
+  * AWS provides secure infrastructure and services
+  * You need to secure operating systems, platforms and data
+  * AWS Services
+    * IaaS - these are services that allow you to architect and bu9ild a Cloud infrastructure using technologies similar to what you might find in traditional rack server hosting solutions
+      * EC2
+      * EBS
+      * Auto Scaling
+      * VPC
+      * Direct Connect
+    * Container (PaaS) - Services i nthis category typically run on EC2 instances but often you don't manage the operating system or platform layer. AWS provides a managed service for these application containers.
+      * Elastic Beanstalk
+      * RDS
+      * EMR
+      * OpsWorks
+      * CloudFormation
+    * SaaS - These services abstract the platform or management layer on which you can build and operate Cloud applications. You access the endpoints of these abstracted services using APIs and AWS manages the underlying service components or the oeprating system on which they reside.
+      * S3
+      * SQL
+      * DynamoDB
+      * SNS
+      * SES
+      * CloudSearch
