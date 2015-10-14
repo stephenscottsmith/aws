@@ -336,3 +336,39 @@
         * Embeds access keys into instance metadata
         * Better than having access keys embedded in apps
   * **Keeping Things Secure #2** Never use your master account to access your resources or manage your services. Create separate users, groups, roles, and permissions in IAM and allow access only as needed.
+* Security Groups
+  * Virtual firewalls that allow you to control the inbound traffic that act on resources
+  * Security groups on VPC's can also control outbound traffic
+  * Can be applied to multiple resources
+  * Resources can be assigned to multiple security groups
+  * Required for services that use them
+  * Default group with no access defined if there is no other
+  * Used by several services (EC2, RDS, VPS, etc.)
+  * Made of: traffic type, protocol, port range, and source
+  * Source IP - CIDR Notation (might need to look this up)
+  * Applying Security Groups Example: user -> port 80 -> Web Server -> port 6081 -> App Server -> Port 3306 -> DB Server
+  * **Keeping Things Secure #3:** Use security groups to control the inbound traffic to your resources, and follow the principle of least privilege when defining your rules.
+* Virtual Private Cloud (VPC)
+  * When EC2 first launched, instances shared a network
+  * All EC2 instances had public IP's
+  * EC2-VPC instances run in a virtual private cloud
+  * Nodes are not automatically addressable publicly
+  * More closely mirrors an in-house network setup
+  * Specify and architect a private IP range
+  * Control both inbound and outbound traffic
+  * Assign multiple IPs, EIPs, and EINs
+  * Connect your VPC to onsite systems with encrypted VPN
+  * Setting Up a Virtual Private Cloud
+    * First select the AWS region into which the VPC will reside
+    * Decide on block of internal IP addresses you want to use for your VPC
+      * IMPORTANT: here you want to think through your needs and ensure you provide a large enough range to support future growth
+    * Start creating your subnets within your VPC
+      * Subnets are confined within an individual availability zone and don't span between them. 
+      * Each subnet has a block of IP addresses to find via the CIDR notation and would be a subset of the block defined for the entire VPC
+    * Next attach gateway interfaces to allow access to your network
+    * VPC better than the deprecated EC2 Classic
+    * **Keeping Things Secure #4:** Become familiar with VPCs and take the time to properly set up a VPC for your environment to take advantage of the new security options available.
+
+## Chapter 7: Theory into Practice: Setting up a Web Application Architecture
+* Overview of the Web Application Architecture
+  * 
