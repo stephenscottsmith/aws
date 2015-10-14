@@ -246,5 +246,15 @@
   * Deliver boilerplate code
   * Ecommererce Common Workflow
     * Customer places order - validate order -> payment is successful -> ship order -> record completion -> end
-                              order verifiers-> CC verifiers          -> warehouse employees -> database records
+                              order verifiers-> CC verifiers -> warehouse employees -> database records
+  * SWF handles workflow management
+  * Deciders  
+    * You configure decisions with Deciders
+    * Responds to results and determines what to do next
+    * Decisions are event-driven
+  * Activity Worker
+    * Performs the work assigned by SWF tasks
+    * Work is scheduled by the Decider
+    * Can run from anywhere
+  * Decoupling Components Lesson #2: Consider using SWF to help with more complex workflows and keep your components independent from one another. 
 
