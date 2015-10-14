@@ -222,7 +222,7 @@
     * Shut down the CloudFormer stack
     * Use the CloudFormation template as needed
   * Use CloudFormation templates to manage and version-control your entire AWS application stack, and easily replicate your stack to new environments.
-## Chpater 5: Decoupling Your Components
+## Chapter 5: Decoupling Your Components
 * Simple Queue Service (SQS)
   * Decoupling Components
     * Reduce tight dependencies
