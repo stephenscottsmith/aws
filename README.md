@@ -295,22 +295,44 @@
   * AWS provides secure infrastructure and services
   * You need to secure operating systems, platforms and data
   * AWS Services
-    * IaaS - these are services that allow you to architect and bu9ild a Cloud infrastructure using technologies similar to what you might find in traditional rack server hosting solutions
-      * EC2
-      * EBS
-      * Auto Scaling
-      * VPC
-      * Direct Connect
+    * IaaS - these are services that allow you to architect and build a Cloud infrastructure using technologies similar to what you might find in traditional rack server hosting solutions
+      * EC2, EBS, Auto-Scaling, VPC, Direct Connect
+      * Amazon Manages: facilities, virtualization, infrastructure, network infrastructure, hardware infrastructure
+      * You manage: your data, your application and software stack, operating system, network and firewall configuration, client and server-side data encryption network traffic protection 
     * Container (PaaS) - Services i nthis category typically run on EC2 instances but often you don't manage the operating system or platform layer. AWS provides a managed service for these application containers.
-      * Elastic Beanstalk
-      * RDS
-      * EMR
-      * OpsWorks
-      * CloudFormation
+      * Elastic Beanstalk, RDS, EMR, OpsWorks, CloudFormation
+      * Amazon Manages: operating system and application management that powers the platform
+      * You Manage: setting up and managing network control such as firewall rules and for managing platform level identity and access management
     * SaaS - These services abstract the platform or management layer on which you can build and operate Cloud applications. You access the endpoints of these abstracted services using APIs and AWS manages the underlying service components or the oeprating system on which they reside.
-      * S3
-      * SQL
-      * DynamoDB
-      * SNS
-      * SES
-      * CloudSearch
+      * S3, SQL, DynamoDB, SNS, SES, CloudSearch
+      * Amazon Manages: server-side data protection and some network traffic protection
+      * You Manage: area of least amount of control and responsibility
+  * **Keeping Things Secure #1:** You must understand your role in the shared security model with regard to the resources you are using, and ensure you implement security at every layer for which you are responsible.
+* Secure AWS Acess Control with Identity and Access Management (IAM)
+  * IAM
+    * is a management tool that allows you to control access and permissions to the AWS resources and services in your account
+    * Master Account
+      * Like the 'root' user on Unix systems
+      * Has console login and keypair
+      * Don't use this user for services and resource access
+      * Recommended that you set up Multi-Factor authentication on this account for added security
+      * Manages users, groups, roles, and permissions
+      * Control which users control which services, actions, and resources
+      * Create users
+        * No privileges by default - which adheres to the security principle of least privilege
+      * Credential types
+        * Console login
+        * Access key / Secret Key
+      * Groups
+        * One or more privileges
+        * Collection of users
+      * Create roles
+        * One or more permissions
+        * Allow users or services to act on your behalf
+        * Prevent long-term sharing of credentials
+      * Application Access
+        * Create the needed role with required permissions
+        * Launch EC2 instance in that role
+        * Embeds access keys into instance metadata
+        * Better than having access keys embedded in apps
+  * **Keeping Things Secure #2** Never use your master account to access your resources or manage your services. Create separate users, groups, roles, and permissions in IAM and allow access only as needed.
