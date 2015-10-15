@@ -390,14 +390,31 @@
     * Example: one can be for dev, product, git, etc.
   * Will download pem file that needs to be chmod 0400 to the downloads folder
 * Configuring a Security Group
-  *
+  * Helps control inbound traffic access
+  * For our purposes we probably only need 2 groups
+    1. Load Balancer 
+      * Allow HTTP on port 80 for everyone
+    2. Web Tier
+      * Allow HTTP on port 80 only from ELB
+      * Allow MySQL/TCP on port 3306 only from web servers
+  * Part of EC2 service
 * Creating an ELB
+  * ELB will balance the load across multiple web servers which helps the system achieve high availability
+  * Part of EC2 Service
+  * Recommended that you use https/ssl only on the load balance level so that you DO NOT have to manage ssl certificates on each individual instance making scaling much easier
+  * We want to "Enable Cross-Zone Load Balancing" because we will be deploying across multiple zones
 * Launching an EC2 Instance (and configuring Apache and PHP with user data)
+  * 
 * Connecting to the EC2 Instance via HTTP
+  *
 * Connecting to the EC2 Instance via SSH
+  *
 * Creating a MySQL RDS Database
+  *
 * Creating a Custom Server Image
+  *
 * Auto Scaling
+  *
 
 ## Chapter 8: Integrating an Application with other AWS Services
 * Launching an Instance in an IAM Role
