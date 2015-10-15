@@ -421,25 +421,25 @@
   * Adding PHP script to have ELB understand whether this instance is healthy
   * 
   * Commands:
-    `ssh -i ~/Downloads/git.pem 54.193.42.202 -l ec2-user`
-    `cd /var/www/html`
-    `sudo groupadd www`
-    `sudo usermod -a -G www ec2-user`
-    `exit`
-    `groups`
-    `sudo chown -R root:www /var/www`
-    `find /var/www -type d -exec sudo chmod 2775 {} +`
-    `find /var/www/ -type f -exec sudo chmod 0664 {} +`
-    `cd /var/www/html`
-    `touch heartbeat.php`
-    ``
-    `touch instance.php`
-    `<?php
-     $this_instance_id = file_get_contents('http://169.254.169.254/latest/meta-data/instance-d');
-     if(!empty($this_instance_id))
-       echo (string)($this_instance_id);
-     else
-       echo "Sory, instance id unknown";`
+    * `ssh -i ~/Downloads/git.pem 54.193.42.202 -l ec2-user`
+    * `cd /var/www/html`
+    * `sudo groupadd www`
+    * `sudo usermod -a -G www ec2-user`
+    * `exit`
+    * `groups`
+    * `sudo chown -R root:www /var/www`
+    * `find /var/www -type d -exec sudo chmod 2775 {} +`
+    * `find /var/www/ -type f -exec sudo chmod 0664 {} +`
+    * `cd /var/www/html`
+    * `touch heartbeat.php`
+    * ``
+    * `touch instance.php`
+    * <?php
+    * $this_instance_id = file_get_contents('http://169.254.169.254/latest/meta-data/instance-d');
+    * if(!empty($this_instance_id))
+    *   echo (string)($this_instance_id);
+    * else
+    *   echo "Sory, instance id unknown";
 * Creating a MySQL RDS Database
   *
 * Creating a Custom Server Image
