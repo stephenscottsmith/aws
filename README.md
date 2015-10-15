@@ -404,11 +404,42 @@
   * Recommended that you use https/ssl only on the load balance level so that you DO NOT have to manage ssl certificates on each individual instance making scaling much easier
   * We want to "Enable Cross-Zone Load Balancing" because we will be deploying across multiple zones
 * Launching an EC2 Instance (and configuring Apache and PHP with user data)
-  * 
+  * Bash Script
+    * #! /bin/bash -ex      // runs bash as sudo first
+    * yum update -y         // update the instance
+    * yum groupinstall -y "Web Server" "MySQL Database" "PHP Support"
+    * service httpd start  // Starts apache
+    * chkconfig            // Starts apache restarts itself automatically every time this instance boots up
+  * Tags
+    * Name is important // web server 1
+    * role              // webserver
+    * env               // dev
 * Connecting to the EC2 Instance via HTTP
-  *
+  * The Bash Script requires to be run as sudo. 
+  * **You might have to SSH (open the port first in Group Security) and then perform this script!** 
 * Connecting to the EC2 Instance via SSH
-  *
+  * Adding PHP script to have ELB understand whether this instance is healthy
+  * 
+  * Commands:
+    `ssh -i ~/Downloads/git.pem 54.193.42.202 -l ec2-user`
+    `cd /var/www/html`
+    `sudo groupadd www`
+    `sudo usermod -a -G www ec2-user`
+    `exit`
+    `groups`
+    `sudo chown -R root:www /var/www`
+    `find /var/www -type d -exec sudo chmod 2775 {} +`
+    `find /var/www/ -type f -exec sudo chmod 0664 {} +`
+    `cd /var/www/html`
+    `touch heartbeat.php`
+    ``
+    `touch instance.php`
+    `<?php
+     $this_instance_id = file_get_contents('http://169.254.169.254/latest/meta-data/instance-d');
+     if(!empty($this_instance_id))
+       echo (string)($this_instance_id);
+     else
+       echo "Sory, instance id unknown";`
 * Creating a MySQL RDS Database
   *
 * Creating a Custom Server Image
