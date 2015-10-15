@@ -432,7 +432,7 @@
     * `find /var/www/ -type f -exec sudo chmod 0664 {} +`
     * `cd /var/www/html`
     * `touch heartbeat.php`
-    * ``
+    * `<?php echo 'OK';`
     * `touch instance.php`
     * <?php
     * $this_instance_id = file_get_contents('http://169.254.169.254/latest/meta-data/instance-d');
@@ -440,6 +440,8 @@
     *   echo (string)($this_instance_id);
     * else
     *   echo "Sory, instance id unknown";
+    * `cd /etc/httpd/`
+    * `sudo tail -f logs/access_log`
 * Creating a MySQL RDS Database
   *
 * Creating a Custom Server Image
