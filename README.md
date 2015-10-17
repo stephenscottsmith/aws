@@ -443,13 +443,30 @@
     * `cd /etc/httpd/`
     * `sudo tail -f logs/access_log`
 * Creating a MySQL RDS Database
-  *
+  * Plan to use for Production Screen
+    * Good Practices 
+      * Multi-availability zone deployment such that one db instance is active in one and the other is reserved as a backup in another zone
+      * Use provisioned IOPS (Input Output Operations per Second) that is often a requirement of the database layer
+  * Connecting to SQL Instance
+    * Must be ssh into web server
+    * `mysql -h [DB INSTANCE ENDPOINT] -u admin -p`
 * Creating a Custom Server Image
-  *
+  * Now with the web server up and running, you should create an AMI so that recreating these web-tier resources will be streamlined
+  * Right-Click the instance -> Create Image
+  * Don't forget to add the new instance to the Load Balancer
 * Auto Scaling
-  *
+  * 2 Components
+    * Launch Configuration - what to scale
+    * Auto Scaling Group - how to scale
 
 ## Chapter 8: Integrating an Application with other AWS Services
 * Launching an Instance in an IAM Role
+  * 4 Steps to Launching an Instance in an IAM Role
+    * Create IAM role
+    * Define which accounts or services can assume the role
+    * Define which API actions and resources the app can use
+    * Specify the role when you launch your instances
 * Install the SDK
-* Using the SDK
+  * SDK comes in almost every language
+* Using the SDK to interface with S3 Storage
+  * Look up code examples
