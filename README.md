@@ -389,6 +389,9 @@
   * Recommended that there is a convention in naming the key-pairs
     * Example: one can be for dev, product, git, etc.
   * Will download pem file that needs to be chmod 0400 to the downloads folder
+  * Ubuntu Instances 
+    * `chmod 600 ec2-keypair.pem`
+    * `ssh -v -i ec2-keypair.pem ubuntu@ec2-174-129-185-190.compute-1.amazonaws.com`
 * Configuring a Security Group
   * Helps control inbound traffic access
   * For our purposes we probably only need 2 groups
