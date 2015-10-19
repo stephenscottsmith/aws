@@ -407,7 +407,7 @@
   * Recommended that you use https/ssl only on the load balance level so that you DO NOT have to manage ssl certificates on each individual instance making scaling much easier
   * We want to "Enable Cross-Zone Load Balancing" because we will be deploying across multiple zones
 * Launching an EC2 Instance (and configuring Apache and PHP with user data)
-  * Bash Script
+  * Bash Script (for Amazon Linux)
     * #! /bin/bash -ex      // runs bash as sudo first
     * yum update -y         // update the instance
     * yum groupinstall -y "Web Server" "MySQL Database" "PHP Support"
